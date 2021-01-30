@@ -372,7 +372,7 @@ def hist_calls(fn):
         _histogram = histogram("%s_calls" % get_qualname(fn))
         rtn = fn(*args, **kwargs)
         if type(rtn) in (int, float):
-            _histogram.update(rtn)
+            _histogram.add(rtn)
         return rtn
 
     return wrapper
